@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Biblioteca bc
+ * @author Felipe Vieira Sobral
  */
 
 public class inicio extends javax.swing.JFrame {
@@ -152,11 +152,12 @@ public class inicio extends javax.swing.JFrame {
         btn2 = new javax.swing.JButton();
         txt1 = new javax.swing.JTextField();
         lbl2 = new javax.swing.JLabel();
-        lbl3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         btn1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        lbl3 = new javax.swing.JLabel();
         lbl4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CONSULTA LOCAL - UFPR PALOTINA");
@@ -196,16 +197,9 @@ public class inicio extends javax.swing.JFrame {
         lbl2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl2.setText("ÚLTIMO CÓDIGO REGISTRADO:");
 
-        lbl3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        lbl3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl3.setText("DATA");
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CONSULTA LOCAL");
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("VERSÃO 0.0.3");
 
         btn1.setText("ABRIR");
         btn1.setBorder(null);
@@ -220,43 +214,71 @@ public class inicio extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
+
+        lbl3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        lbl3.setForeground(new java.awt.Color(255, 255, 255));
+        lbl3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl3.setText("DATA");
+
+        lbl4.setForeground(new java.awt.Color(255, 255, 255));
         lbl4.setText("USUARIO");
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("VERSÃO 0.0.4");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(lbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(lbl4)
+                .addGap(27, 27, 27))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl3)
+                    .addComponent(lbl4)
+                    .addComponent(jLabel2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49)
-                        .addComponent(lbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbl4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
                         .addComponent(lbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4)))
-                .addContainerGap(21, Short.MAX_VALUE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(86, 86, 86)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(67, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -268,12 +290,8 @@ public class inicio extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl3)
-                    .addComponent(jLabel2)
-                    .addComponent(lbl4))
-                .addContainerGap())
+                .addGap(11, 11, 11)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -303,8 +321,8 @@ public class inicio extends javax.swing.JFrame {
         
         if(tamanho==8){
             
-            //pasta = ("C:\\Users\\"+usuario+"\\Documents\\NetBeansProjects\\Projeto2\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); // CAMINHO TESTES
-            pasta = ("C:\\Users\\"+usuario+"\\Google Drive\\A estatística consulta local\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); //CAMINHO PADRÃO
+            pasta = ("C:\\Users\\"+usuario+"\\Documents\\NetBeansProjects\\Projeto2\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); // CAMINHO TESTES
+            //pasta = ("C:\\Users\\"+usuario+"\\Google Drive\\A estatística consulta local\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); //CAMINHO PADRÃO
             //pasta = ("C:\\Users\\USUARIO\\Google Drive\\A estatística consulta local\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); //COMPUTADOR2
             caminho = ("Estatística "+data+".txt");
             salvar.salvarArquivo(x, caminho, pasta);
@@ -348,14 +366,15 @@ public class inicio extends javax.swing.JFrame {
         ano = horas(2);
         String usuario = System.getProperty("user.name");
         
-        //pasta = ("C:\\Users\\"+usuario+"\\Documents\\NetBeansProjects\\Projeto2\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); // CAMINHO TESTES
+        pasta = ("C:\\Users\\"+usuario+"\\Documents\\NetBeansProjects\\Projeto2\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); // CAMINHO TESTES
         //pasta = ("C:\\Users\\USUARIO\\Google Drive\\A estatística consulta local\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); // COMPUTADOR2
-        pasta = ("C:\\Users\\"+usuario+"\\Google Drive\\A estatística consulta local\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); //PADRÃO
+        //pasta = ("C:\\Users\\"+usuario+"\\Google Drive\\A estatística consulta local\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); //PADRÃO
         caminho = ("Estatística "+data+".txt");
         
         try {
             java.awt.Desktop.getDesktop().open(new File(pasta+caminho));
         } catch (IOException ex) {
+            
 			System.out.println("Erro: "+ex.toString());
                         ex.printStackTrace();
                         JOptionPane.showMessageDialog(null, "ARQUIVO NÃO EXISTE", "BIBLIOTECA - UFPR", JOptionPane.ERROR_MESSAGE);
@@ -409,6 +428,7 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JButton btn2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;
     private javax.swing.JLabel lbl3;
