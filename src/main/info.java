@@ -20,24 +20,12 @@ public class info extends javax.swing.JFrame {
         initComponents();
         
         setIcon();
-        
-        String dt = inicio.horas(0);
-        String nMes = inicio.horas(1);
-        String nomeMes = inicio.nomeMes(nMes);
-        String ano = inicio.horas(2);
-        String usuario = System.getProperty("user.name");
-        
-        String pasta;
-        String caminho = ("Estatística "+dt+".txt");
-        
-        //pasta = ("C:\\Users\\"+usuario+"\\Documents\\NetBeansProjects\\Projeto2\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\");
-        pasta = ("C:\\Users\\"+usuario+"\\Google Drive\\A estatística consulta local\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); //PADRÃO
-        
-        String dir = pasta+caminho;
+               
+        String pasta = inicio.pasta(1, 2);
         
         String data = inicio.horas(0);
-        lbl1.setText(usuario); 
-        lbl2.setText(dir);
+        lbl1.setText(System.getProperty("user.name")); 
+        lbl2.setText(pasta);
         lbl3.setText(data);
     }
 

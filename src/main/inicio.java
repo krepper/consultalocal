@@ -69,11 +69,18 @@ public class inicio extends javax.swing.JFrame {
         Date hoje = new Date();
         SimpleDateFormat teste;
         teste = new SimpleDateFormat("dd-MM-yyyy");
-        if (n==1){
-            teste = new SimpleDateFormat("MM");
-        }       
-        if (n==2){
-            teste = new SimpleDateFormat("yyyy");
+        switch (n) {
+            case 1:
+                teste = new SimpleDateFormat("MM");
+                break;
+            case 2:
+                teste = new SimpleDateFormat("yyyy");
+                break;
+            case 3:
+                teste = new SimpleDateFormat("HH");
+                break;
+            default:
+                break;
         }
         String data = teste.format(hoje);
         
@@ -158,6 +165,8 @@ public class inicio extends javax.swing.JFrame {
         lbl3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btn3 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        btn4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CONSULTA LOCAL - UFPR PALOTINA");
@@ -223,7 +232,7 @@ public class inicio extends javax.swing.JFrame {
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("VERSÃO 0.0.4");
+        jLabel2.setText("VERSÃO 0.0.5");
 
         btn3.setBackground(new java.awt.Color(0, 102, 255));
         btn3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -261,35 +270,61 @@ public class inicio extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel3.setText("PARA TESTES");
+
+        btn4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btn4.setText("+");
+        btn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(76, 76, 76)
+                                .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn4))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(btn4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -314,13 +349,8 @@ public class inicio extends javax.swing.JFrame {
         getRootPane().setDefaultButton(btn2);
         
         String x = txt1.getText();
-        String caminho, data, pasta, nMes, nomeMes, ano;
-        data = horas(0);
-        nMes = horas(1);
-        nomeMes = nomeMes(nMes);
-        ano = horas(2);
-        String usuario = System.getProperty("user.name");
-        
+        String caminho, pasta;
+
         int tamanho = x.length();
         
         lbl1.setForeground(Color.black);
@@ -330,10 +360,8 @@ public class inicio extends javax.swing.JFrame {
         
         if(tamanho==8){
             
-            //pasta = ("C:\\Users\\"+usuario+"\\Documents\\NetBeansProjects\\Projeto2\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); // CAMINHO TESTES
-            pasta = ("C:\\Users\\"+usuario+"\\Google Drive\\A estatística consulta local\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); //CAMINHO PADRÃO
-            //pasta = ("C:\\Users\\USUARIO\\Google Drive\\A estatística consulta local\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); //COMPUTADOR2
-            caminho = ("Estatística "+data+".txt");
+            pasta = pasta(1,1); 
+            caminho = pasta(2,1);
             salvar.salvarArquivo(x, caminho, pasta);
             
 
@@ -368,17 +396,10 @@ public class inicio extends javax.swing.JFrame {
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         // TODO add your handling code here:
-        String caminho, data, pasta, nMes, nomeMes, ano;
-        data = horas(0);
-        nMes = horas(1);
-        nomeMes = nomeMes(nMes);
-        ano = horas(2);
-        String usuario = System.getProperty("user.name");
+        String caminho, pasta;     
         
-        //pasta = ("C:\\Users\\"+usuario+"\\Documents\\NetBeansProjects\\Projeto2\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); // CAMINHO TESTES
-        //pasta = ("C:\\Users\\USUARIO\\Google Drive\\A estatística consulta local\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); // COMPUTADOR2
-        pasta = ("C:\\Users\\"+usuario+"\\Google Drive\\A estatística consulta local\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\"); //PADRÃO
-        caminho = ("Estatística "+data+".txt");
+        pasta = pasta(1, 1);
+        caminho = pasta(2, 1);
         
         try {
             java.awt.Desktop.getDesktop().open(new File(pasta+caminho));
@@ -401,6 +422,13 @@ public class inicio extends javax.swing.JFrame {
         info frame = new info();
         frame.setVisible(true);
     }//GEN-LAST:event_btn3ActionPerformed
+
+    private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
+        // TODO add your handling code here:
+        
+        mov frame = new mov();
+        frame.setVisible(true);
+    }//GEN-LAST:event_btn4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -443,8 +471,10 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JButton btn1;
     private javax.swing.JButton btn2;
     private javax.swing.JButton btn3;
+    private javax.swing.JButton btn4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;
@@ -452,9 +482,55 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JTextField txt1;
     // End of variables declaration//GEN-END:variables
 
-    private void setIcon() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
+    void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));        
+        
+    }
+    
+    /*
+    A função recebe parâmentros I e X para manipular algumas escolhas. Caso I=0, a função irá retornar "pasta+caminho" | Caso I=1, a função retorna apenas "pasta"...
+    No caso do parâmetro X, ele serve para alternar entre 0 e 1, que no caso X=0, a função irá retornar o diretório 1 e assim por diante.
+    */
+
+    public static String pasta(int i, int x){
+        String dt = inicio.horas(0);
+        String nMes = inicio.horas(1);
+        String nomeMes = inicio.nomeMes(nMes);
+        String ano = inicio.horas(2);
+        String usuario = System.getProperty("user.name");
+        String pasta = null;
+        
+        switch (x) {
+            case 0:
+                pasta = ("USUARIO\\"+ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\");
+                break;
+            case 1:
+                pasta = (ano+"\\"+nMes+" - "+nomeMes+" "+ano+"\\");
+                break;
+            case 2:
+                pasta = (new File(".").getAbsolutePath());
+                break;
+            default:
+                break;
+        }
+        
+        String caminho = ("Estatística "+dt+".txt");
+        
+        String dir = pasta+caminho;
+        
+        switch (i) {
+            case 0:
+                return dir;
+            case 1:
+                return pasta;
+            case 2:
+                return caminho;
+            default:
+                break;
+        }
         
         
+        
+        return "N?";
     }
 }
