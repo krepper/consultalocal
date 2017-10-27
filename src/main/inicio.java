@@ -239,7 +239,7 @@ public class inicio extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/img/icons8_Merge_Git_16px.png"))); // NOI18N
-        jLabel2.setText("VERSÃO 0.0.5");
+        jLabel2.setText("VERSÃO 0.0.6");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -267,6 +267,10 @@ public class inicio extends javax.swing.JFrame {
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/img/icons8_User_16px.png"))); // NOI18N
         jMenu1.setText("Usuários");
+        jMenu1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/main/img/icons8_User_Male_16px_1.png"))); // NOI18N
+        jMenu1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/main/img/icons8_User_Male_16px_1.png"))); // NOI18N
+        jMenu1.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/main/img/icons8_User_Male_16px_1.png"))); // NOI18N
+        jMenu1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/main/img/icons8_User_Male_16px_1.png"))); // NOI18N
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/img/icons8_Queue_16px.png"))); // NOI18N
@@ -345,7 +349,7 @@ public class inicio extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
+                .addContainerGap(32, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
@@ -426,15 +430,13 @@ public class inicio extends javax.swing.JFrame {
         pasta = pasta(1, 1);
         caminho = pasta(2, 1);
         
+        
         try {
             java.awt.Desktop.getDesktop().open(new File(pasta+caminho));
         } catch (IOException ex) {
-            
-			System.out.println("Erro: "+ex.toString());
-                        ex.printStackTrace();
-                        JOptionPane.showMessageDialog(null, "ARQUIVO NÃO EXISTE", "BIBLIOTECA - UFPR", JOptionPane.ERROR_MESSAGE);
-                        
+            JOptionPane.showMessageDialog(null, "ARQUIVO NÃO CRIADO", "ALERTA", JOptionPane.ERROR_MESSAGE);
         }
+
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btn1KeyPressed
@@ -535,7 +537,6 @@ public class inicio extends javax.swing.JFrame {
         String nMes = inicio.horas(1);
         String nomeMes = inicio.nomeMes(nMes);
         String ano = inicio.horas(2);
-        String usuario = System.getProperty("user.name");
         String pasta = null;
         
         switch (x) {

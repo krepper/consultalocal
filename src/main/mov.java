@@ -518,7 +518,7 @@ public class mov extends javax.swing.JFrame {
         return result;
     }
     
-    public void salvarArquivo(String x, String nome, String pasta){
+    public static void salvarArquivo(String x, String nome, String pasta){
 		try{
                     new File(pasta).mkdirs();
                     File f = new File(pasta+nome);
