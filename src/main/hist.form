@@ -150,16 +150,20 @@
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txt2" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
-                          <Component id="txt3" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                          <Component id="txt1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txt3" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="txt1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btn3" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                          <Component id="btn1" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btn2" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btn3" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="btn1" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
